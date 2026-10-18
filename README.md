@@ -53,17 +53,6 @@ Current detections include:
 
 The detections are configured as scheduled alerts in Splunk and are used as the starting point for investigation.
 
-## Investigation Workflow
-
-When an alert is triggered, I use it as the starting point for investigation.
-
-My basic workflow is:
-
-1. Review the alert and identify the affected host, user, process, or source IP.
-2. Pivot to related logs in Splunk.
-3. Correlate events from different log sources.
-4. Build a simple timeline of the activity.
-5. Decide whether the activity is benign, suspicious, or a confirmed incident.
 
 ## Current Lab Capabilities
 
@@ -77,3 +66,15 @@ The current version of the lab can:
 - Detect suspicious registry persistence
 - Detect basic port scanning activity
 - Generate scheduled alerts for investigation
+
+## Future Improvements
+
+I plan to continue improving this lab as I learn more.
+
+Possible future additions include:
+
+- Active Directory and Windows Server
+- EDR or endpoint monitoring tools
+- IDS/IPS for network monitoring
+- Additional detection rules and alerts
+- More realistic attack and investigation scenarios
