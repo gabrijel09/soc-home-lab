@@ -36,3 +36,44 @@ The main log sources used in the lab are:
 - **PowerShell Operational Logs** – used to monitor PowerShell activity and Script Block Logging
 - **Task Scheduler Logs** – used to monitor scheduled task activity
 - **Windows Filtering Platform Logs** – used to detect blocked network traffic, such as port scanning attempts
+
+## Detections and Alerts
+
+I created several basic detection rules in Splunk to identify suspicious activity on the Windows endpoint.
+
+Current detections include:
+
+- Suspicious PowerShell Execution
+- Suspicious Run Key Persistence
+- Account Added to Local Administrators
+- Suspicious Scheduled Task
+- New Service Creation
+- Multiple Failed Logons
+- Possible Port Scan
+
+The detections are configured as scheduled alerts in Splunk and are used as the starting point for investigation.
+
+## Investigation Workflow
+
+When an alert is triggered, I use it as the starting point for investigation.
+
+My basic workflow is:
+
+1. Review the alert and identify the affected host, user, process, or source IP.
+2. Pivot to related logs in Splunk.
+3. Correlate events from different log sources.
+4. Build a simple timeline of the activity.
+5. Decide whether the activity is benign, suspicious, or a confirmed incident.
+
+## Current Lab Capabilities
+
+The current version of the lab can:
+
+- Collect Windows logs in Splunk
+- Monitor process creation with Sysmon
+- Monitor PowerShell activity
+- Detect failed logons and account changes
+- Detect suspicious scheduled tasks and service creation
+- Detect suspicious registry persistence
+- Detect basic port scanning activity
+- Generate scheduled alerts for investigation
